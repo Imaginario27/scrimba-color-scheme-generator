@@ -1,0 +1,121 @@
+
+/**************************
+    GENERAL
+**************************/
+:root {
+    --lightDyedColor: #c1c5d8;
+    --lightGrayBorders: #D1D5DB;
+    --lightGrayBackgrounds: #E5E5E5;
+
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size:16px;
+    background: var(--lightDyedColor);
+}
+
+main {
+    position: relative;
+}
+
+/**************************
+    Layout
+**************************/
+#main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+#main-container-inner {
+    width:550px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+header {
+    display:flex;
+    justify-content: space-between;
+    padding: 1.56em 0.93em;
+    gap:13px;
+}
+header, #hex-val-container div {
+    background: white;
+}
+
+header select {
+    width:312px;
+    border-radius:6px;
+    padding: .56em .81em;
+}
+header select option {
+    padding:10px;
+    text-transform: capitalize;
+}
+
+header button, #hex-val-container span  {
+    font-size: .75rem;
+}
+header input {
+    height:auto;
+    border:none;
+    background: var(--lightGrayBackgrounds);
+}
+header input, header select, header button {
+    border: .5px solid var(--lightGrayBorders);
+}
+header input:hover, 
+header select:hover, 
+header button:hover, 
+#hex-val-container span:hover,
+#color-scheme-container div {
+    cursor: pointer;
+    user-select: none;
+}
+header button {
+    background:white;
+    border-radius:4px;
+    padding: .81em .69em;
+    transition:all 100ms ease-in-out;
+}
+header button:hover {
+    background:var(--lightGrayBorders);
+}
+
+#color-scheme-container, #hex-val-container {
+    display:flex;
+}
+#color-scheme-container div {
+    height:414px;
+}
+#color-scheme-container div, #hex-val-container div {
+    width:20%;
+}
+#hex-val-container div {
+    text-align:center;
+    padding: .69em 0;
+    text-transform: uppercase;
+}
+
+#hex-val-container span:hover {
+    font-weight:600;
+}
+
+/**************************
+    Modal notification
+**************************/
+#notification-copy-modal {
+    display:none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 1em;
+    border-radius: 5px;
+    color: white;
+}
+
+#modal-content {
+    text-align: center;
+}
