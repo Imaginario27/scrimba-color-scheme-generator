@@ -4,7 +4,7 @@
 **************************/
 :root {
     --lightDyedColor: #c1c5d8;
-    --lightGrayBorders: #D1D5DB;
+    --lightGrayBorders: #b9bec5;
     --lightGrayBackgrounds: #E5E5E5;
 }
 
@@ -100,9 +100,10 @@ header button:hover {
 }
 
 #color-scheme-container div span {
-    background: white;
+    background: rgba(0,0,0,.8);
     padding:.6em;
     border-radius:5px;
+    color:white;
 }
 
 #hex-val-container div {
