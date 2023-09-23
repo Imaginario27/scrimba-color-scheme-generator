@@ -11,7 +11,7 @@
         <title>Color scheme app</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="index.css">
     </head>
@@ -22,12 +22,16 @@
         <div id="main-container">
             <div id="main-container-inner">
                 <header>
-                    <input id="color-picker" type="color">
-                    <div id="color-selector-container">
-                        <select id="color-scheme-select">
-                            <!-- Color Scheme Modes -->
-                        </select>
-                        <button id="get-color-scheme-btn">Get color scheme</button>
+                    <div id="logo">Colour Scheme App</div>
+                    <p>A tool to obtain hex values from different colour schemes</p>
+                    <div id="header-action-container">
+                        <input id="color-picker" type="color">
+                        <div id="color-selector-container">
+                            <select id="color-scheme-select">
+                                <!-- Color Scheme Modes -->
+                            </select>
+                            <button id="get-color-scheme-btn">Get color scheme</button>
+                        </div>
                     </div>
                 </header>
                 <main>
@@ -40,9 +44,6 @@
                         </div>
                     </div>
                 </main>
-                <div id="hex-val-container">
-                    <!-- Color hex codes -->
-                </div>
             </div>
         </div>        
         <script src="index.js" async defer></script>

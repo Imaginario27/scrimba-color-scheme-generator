@@ -53,6 +53,11 @@ function checkMobile() {
     }
 }
 
+// Check if the user agent contains common keywords for mobile devices
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 // Gets the color schemes data from the API
 function renderColorScheme() {
     const hexColor = colorPicker.value.slice(1) // Removes the # from the string
@@ -87,11 +92,8 @@ function renderColorScheme() {
             })
 
             document.getElementById('color-scheme-container').innerHTML = colorAreaHTML
-            if (!isMobile) {
-                document.getElementById('hex-val-container').innerHTML = colorHexHTML
-            }
 
-            setColorArea() // Call the function to set the width
+            setColorArea() 
         })
 }
 
@@ -108,24 +110,17 @@ function renderSelect(){
 // Function to set the layout of color areas based on mobile or desktop view
 function setColorArea() {
     const colorAreaDivs = document.querySelectorAll('#color-scheme-container div')
-    const colorHexDivs = document.querySelectorAll('#hex-val-container div')
 
-    if (isMobile) {
+    if (isMobile || isMobileDevice) {
         colorAreaDivs.forEach(div => {
             div.style.width = '100%'
             const hexValue = div.dataset.hex
             div.innerHTML = `<span>${hexValue}</span>`
         })
-        colorHexDivs.forEach(div => {
-            div.style.width = '0%' // Hide the hex value container
-        })
     } else {
         colorAreaDivs.forEach(div => {
             div.style.width = `${colorAreaPercent}%`
             div.innerHTML = ""
-        })
-        colorHexDivs.forEach(div => {
-            div.style.width = `${colorAreaPercent}%`
         })
     }
 }

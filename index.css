@@ -4,8 +4,11 @@
 **************************/
 :root {
     --lightDyedColor: #c1c5d8;
-    --lightGrayBorders: #b9bec5;
+    --lightGrayBorders: #81878f;
+    --hoverColor: rgba(218, 228, 241,0.3);
     --lightGrayBackgrounds: #E5E5E5;
+    --logoColor: #81878f;
+    --descriptionColor: #81878f;
 }
 
 body {
@@ -21,15 +24,16 @@ main {
 /**************************
     Layout
 **************************/
+
 header {
+    background: white;
+    padding: 1.56em 0.93em;
+}
+
+header #header-action-container {
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 1.56em 0.93em;
     gap:13px;
-}
-header, #hex-val-container div {
-    background: white;
 }
 
 header #color-selector-container {
@@ -48,8 +52,9 @@ header select option {
     text-transform: capitalize;
 }
 
-header button, #hex-val-container span  {
+header button {
     font-size: .75rem;
+    font-weight: 600;
 }
 header input {
     height:40px;
@@ -64,7 +69,6 @@ header input, header select, header button {
 header input:hover, 
 header select:hover, 
 header button:hover, 
-#hex-val-container span:hover,
 #color-scheme-container div {
     cursor: pointer;
     user-select: none;
@@ -77,19 +81,32 @@ header button {
     transition:all 100ms ease-in-out;
 }
 header button:hover {
-    background:var(--lightGrayBorders);
+    background:var(--hoverColor);
+}
+
+header #logo {
+    font-family: 'Pacifico', cursive;
+    font-size:1.7rem;
+    font-weight:bold;
+    text-align: center;
+    margin-bottom:.8em;
+}
+
+header p {
+    text-align: center;
+    font-size:.8rem;
+    margin-bottom:1.3em;
+    color:var(--descriptionColor);
+    font-style: italic;
 }
 
 #color-scheme-container {
     display:flex;
 }
-#hex-val-container {
-    display:none;
-}
-#color-scheme-container {
-    height:calc(100vh - 195px);
-    flex-direction: column;
 
+#color-scheme-container {
+    height:calc(100vh - 195.05px);
+    flex-direction: column;
 }
 
 #color-scheme-container div {
@@ -104,16 +121,7 @@ header button:hover {
     padding:.6em;
     border-radius:5px;
     color:white;
-}
-
-#hex-val-container div {
-    text-align:center;
-    padding: .69em 0;
-    text-transform: uppercase;
-}
-
-#hex-val-container span:hover {
-    font-weight:600;
+    font-size:.8rem;
 }
 
 /**************************
@@ -142,24 +150,25 @@ header button:hover {
         width:35%;
     }
     #color-scheme-container {
-        height:calc(100vh - 152px);
+        height:calc(100vh - 151.94px);
     }
 }
 @media (min-width:500px) {
-    header {
+    header #header-action-container{
         flex-direction:row;
     }
     header select {
-        width:65%;
-    }
-    header select {
-        width:312px;
+        width:300px;
     }
     header button {
-        width:100%;
+        width:auto;
     }
     #color-scheme-container {
         height:calc(100vh - 91.98px);
+    }
+    header input {
+        width:100px;
+        height:auto;
     }
 }
 
@@ -174,13 +183,6 @@ header button:hover {
         width:550px;
         box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
-    header input {
-        width:60px;
-        min-width:60px;
-    }
-    header #color-selector-container {
-        justify-content: space-between;
-    }
     #color-scheme-container div {
         height:414px;
     }
@@ -188,7 +190,7 @@ header button:hover {
         flex-direction: row;
         height:auto;
     }
-    #hex-val-container {
-        display:flex;
+    header #logo {
+        font-size:2rem;
     }
 }
