@@ -1,11 +1,8 @@
-
-/**************************
-    GENERAL
-**************************/
+/* General Styles */
 :root {
     --lightDyedColor: #c1c5d8;
     --lightGrayBorders: #81878f;
-    --hoverColor: rgba(218, 228, 241,0.3);
+    --hoverColor: rgba(218, 228, 241, 0.3);
     --lightGrayBackgrounds: #E5E5E5;
     --logoColor: #81878f;
     --descriptionColor: #81878f;
@@ -13,7 +10,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    font-size:16px;
+    font-size: 16px;
     background: var(--lightDyedColor);
 }
 
@@ -21,51 +18,52 @@ main {
     position: relative;
 }
 
-/**************************
-    Layout
-**************************/
-
+/* Header Styles */
 header {
     background: white;
     padding: 1.56em 0.93em;
 }
 
 header #header-action-container {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    gap:13px;
+    gap: 13px;
+    justify-content: center;
 }
 
 header #color-selector-container {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    gap:15px;
+    gap: 15px;
 }
 
 header select {
-    width:100%;
-    border-radius:6px;
-    padding: .56em .81em;
+    width: 100%;
+    border-radius: 6px;
+    padding: 0.56em 0.81em;
 }
+
 header select option {
-    padding:10px;
+    padding: 10px;
     text-transform: capitalize;
 }
 
 header button {
-    font-size: .75rem;
+    font-size: 0.75rem;
     font-weight: 600;
 }
-header input {
-    height:40px;
-    width:100%;
-    border:none;
-    background: var(--lightGrayBackgrounds);
 
+header input {
+    height: 40px;
+    width: 100%;
+    border: none;
+    background: var(--lightGrayBackgrounds);
 }
+
 header input, header select, header button {
-    border: .5px solid var(--lightGrayBorders);
+    border: 0.5px solid var(--lightGrayBorders);
 }
+
 header input:hover, 
 header select:hover, 
 header button:hover, 
@@ -73,62 +71,59 @@ header button:hover,
     cursor: pointer;
     user-select: none;
 }
+
 header button {
-    width:100%;
-    background:white;
-    border-radius:4px;
-    padding: .81em .69em;
-    transition:all 100ms ease-in-out;
+    width: 100%;
+    background: white;
+    border-radius: 4px;
+    padding: 0.81em 0.69em;
+    transition: all 100ms ease-in-out;
 }
+
 header button:hover {
-    background:var(--hoverColor);
+    background: var(--hoverColor);
 }
 
 header #logo {
     font-family: 'Pacifico', cursive;
-    font-size:1.7rem;
-    font-weight:bold;
+    font-size: 1.7rem;
+    font-weight: bold;
     text-align: center;
-    margin-bottom:.8em;
 }
 
 header p {
     text-align: center;
-    font-size:.8rem;
-    margin-bottom:1.3em;
-    color:var(--descriptionColor);
+    font-size: 0.8rem;
+    margin-bottom: 1.3em;
+    color: var(--descriptionColor);
     font-style: italic;
 }
 
+/* Color Scheme Container Styles */
 #color-scheme-container {
-    display:flex;
-}
-
-#color-scheme-container {
-    height:calc(100vh - 195.05px);
+    display: flex;
+    height: calc(100vh - 285.16px);
     flex-direction: column;
 }
 
 #color-scheme-container div {
-    flex: 1; /* Distribute space evenly among the divs */
-    display:flex;
+    flex: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #color-scheme-container div span {
-    background: rgba(0,0,0,.8);
-    padding:.6em;
-    border-radius:5px;
-    color:white;
-    font-size:.8rem;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.6em;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.8rem;
 }
 
-/**************************
-    Modal notification
-**************************/
+/* Modal Notification Styles */
 #notification-copy-modal {
-    display:none;
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -142,55 +137,58 @@ header p {
 #modal-content {
     text-align: center;
 }
-@media (min-width:370px) {
+
+/* Media Queries */
+@media (min-width: 370px) {
     header #color-selector-container {
         flex-direction: row;
     }
     header button {
-        width:35%;
+        width: 35%;
     }
     #color-scheme-container {
-        height:calc(100vh - 151.94px);
-    }
-}
-@media (min-width:500px) {
-    header #header-action-container{
-        flex-direction:row;
-    }
-    header select {
-        width:300px;
-    }
-    header button {
-        width:auto;
-    }
-    #color-scheme-container {
-        height:calc(100vh - 91.98px);
-    }
-    header input {
-        width:100px;
-        height:auto;
+        height: calc(100vh - 242.05px);
     }
 }
 
-@media (min-width:600px) {
-    #main-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; 
+@media (min-width: 370px) {
+    #color-scheme-container {
+        height: calc(100vh - 227.34px);
     }
-    #main-container-inner {
-        width:550px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 500px) {
+    header #header-action-container {
+        flex-direction: row;
     }
-    #color-scheme-container div {
-        height:414px;
+    header select {
+        width: 300px;
+    }
+    header button {
+        width: auto;
     }
     #color-scheme-container {
+        height: calc(100vh - 174.34px);
+    }
+    header input {
+        width: 100px;
+        height: auto;
+    }
+}
+
+@media (min-width: 578px) {
+    #color-scheme-container {
+        height: calc(100vh - 167.22px);
+    }
+}
+
+@media (min-width: 600px) {
+    #color-scheme-container {
         flex-direction: row;
-        height:auto;
+        height: calc(100vh - 217.53px);
     }
     header #logo {
-        font-size:2rem;
+        font-size: 2rem;
+        margin: 1em 0 0.8em;
     }
 }

@@ -5,7 +5,6 @@ const colorPicker = document.getElementById("color-picker")
 const colorSchemeSelect = document.getElementById("color-scheme-select")
 const getColorSchemeBtn = document.getElementById("get-color-scheme-btn")
 const notificationCopyModal = document.getElementById('notification-copy-modal')
-let isMobile = false
 let colourCount = 6
 const colorAreaPercent = 100 / colourCount
 const colorSchemeModes = [
@@ -27,37 +26,14 @@ getColorSchemeBtn.addEventListener("click", renderColorScheme)
 
 // Runs the copy to clipboard function when the hex code is clicked
 document.addEventListener('click', function(e){
-    if (e.target.dataset.hex) {
+    if (e.target.dataset.hex || e.target.tagName === 'SPAN') {
         copyColorHexValueToClipboard(e.target.dataset.hex) 
     }
-    if (isMobile && e.target.tagName === 'SPAN') {
-        copyColorHexValueToClipboard(e.target.textContent)
-    }
-})
-
-// Checks if it's mobile and decides which type of color area layout is required
-window.addEventListener('resize', function(){
-    checkMobile()
-    setColorArea()
 })
 
 /**************************
     Functions
 **************************/
-// Function to check if it's a mobile or desktop view
-function checkMobile() {
-    if (window.innerWidth < 600) {
-        isMobile = true
-    } else {
-        isMobile = false
-    }
-}
-
-// Check if the user agent contains common keywords for mobile devices
-function isMobileDevice() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
 // Gets the color schemes data from the API
 function renderColorScheme() {
     const hexColor = colorPicker.value.slice(1) // Removes the # from the string
@@ -77,23 +53,16 @@ function renderColorScheme() {
             let colorAreaHTML = ''
             let colorHexHTML = ''
 
-            // For each color, a color and hex column is created
+            // For each color, a color area is created
             colorArray.forEach(color => {
                 colorAreaHTML += `
                     <div style="background: ${color.hex.value}" data-hex="${color.hex.value}">
-                        ${isMobile ? `<span >${color.hex.value}</span>` : ''}
+                        <span>${color.hex.value}</span>
                     </div>
                 `
-                if (!isMobile) {
-                    colorHexHTML += `
-                        <div><span data-hex="${color.hex.value}">${color.hex.value}</span></div>
-                    `
-                }
             })
 
             document.getElementById('color-scheme-container').innerHTML = colorAreaHTML
-
-            setColorArea() 
         })
 }
 
@@ -107,25 +76,7 @@ function renderSelect(){
     })
 }
 
-// Function to set the layout of color areas based on mobile or desktop view
-function setColorArea() {
-    const colorAreaDivs = document.querySelectorAll('#color-scheme-container div')
-
-    if (isMobile || isMobileDevice) {
-        colorAreaDivs.forEach(div => {
-            div.style.width = '100%'
-            const hexValue = div.dataset.hex
-            div.innerHTML = `<span>${hexValue}</span>`
-        })
-    } else {
-        colorAreaDivs.forEach(div => {
-            div.style.width = `${colorAreaPercent}%`
-            div.innerHTML = ""
-        })
-    }
-}
-
-// Copies the data hex value to the clipboard and shows&hide a notification message
+// Copies the data hex value to the clipboard and shows & hide a notification message
 function copyColorHexValueToClipboard(dataHexValue) {
     navigator.clipboard.writeText(dataHexValue)
     document.getElementById('modal-content').innerHTML = `<p>You have copied: ${dataHexValue}</p>`
@@ -139,6 +90,5 @@ function copyColorHexValueToClipboard(dataHexValue) {
 /**************************
     On Page Load
 **************************/
-checkMobile()
 renderSelect()
 renderColorScheme()
