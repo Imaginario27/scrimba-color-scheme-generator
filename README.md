@@ -1,6 +1,6 @@
 # Colour Scheme Generator
 
-The Color Scheme Generator is a user-friendly web application that empowers you to explore and create beautiful colour schemes effortlessly. With a wide range of customization options, you can pick a base colour, select a colour scheme type, and generate six different colours, each with their own hex values. Whether you're a designer, developer, or simply looking to spruce up your projects with appealing colour palettes, this tool has got you covered.
+The Colour Scheme Generator is a user-friendly web application that empowers you to explore and create beautiful colour schemes effortlessly. With a wide range of customization options, you can pick a base colour, select a colour scheme type, and generate six different colours, each with their own hex values. Whether you're a designer, developer, or simply looking to spruce up your projects with appealing colour palettes, this tool has got you covered.
 
 ## Features
 - Generate harmonious colour schemes.
