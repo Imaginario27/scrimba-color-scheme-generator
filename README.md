@@ -10,7 +10,7 @@ The Colour Scheme Generator is a user-friendly web application that empowers you
 - User-friendly and responsive design.
 
 ## Demo
-Experience the Colour Scheme Generator in action by visiting the [app page](https://scrimba-password-generator-img27.netlify.app).
+Experience the Colour Scheme Generator in action by visiting the [app page](https://scrimba-colour-scheme-generator-img27.netlify.app/).
 
 ## How to Use
 1. Open the Colour Scheme Generator in your web browser.
@@ -22,7 +22,7 @@ Experience the Colour Scheme Generator in action by visiting the [app page](http
 Your custom colour scheme is ready to enhance your design projects.
 
 ## Screenshot
-![Screenshot](https://imaginario27.com/wp-content/uploads/2023/09/generador-contrasenas-app.jpg)
+![Screenshot](https://imaginario27.com/wp-content/uploads/2023/09/generador-esquemas-color-app.png)
 
 ## Acknowledgments
 This project was inspired by the need for a simple colour scheme generator.
