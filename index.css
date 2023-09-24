@@ -102,7 +102,6 @@ header p {
 /* Color Scheme Container Styles */
 #color-scheme-container {
     display: flex;
-    height: calc(100vh - 285.16px);
     flex-direction: column;
 }
 
@@ -139,6 +138,7 @@ header p {
 }
 
 /* Media Queries */
+
 @media (min-width: 370px) {
     header #color-selector-container {
         flex-direction: row;
@@ -146,16 +146,8 @@ header p {
     header button {
         width: 35%;
     }
-    #color-scheme-container {
-        height: calc(100vh - 242.05px);
-    }
 }
 
-@media (min-width: 370px) {
-    #color-scheme-container {
-        height: calc(100vh - 227.34px);
-    }
-}
 
 @media (min-width: 500px) {
     header #header-action-container {
@@ -167,9 +159,6 @@ header p {
     header button {
         width: auto;
     }
-    #color-scheme-container {
-        height: calc(100vh - 174.34px);
-    }
     header input {
         width: 100px;
         height: auto;
@@ -177,18 +166,14 @@ header p {
 }
 
 @media (min-width: 578px) {
-    #color-scheme-container {
-        height: calc(100vh - 167.22px);
-    }
 }
 
 @media (min-width: 600px) {
     #color-scheme-container {
         flex-direction: row;
-        height: calc(100vh - 217.53px);
     }
     header #logo {
         font-size: 2rem;
-        margin: 1em 0 0.8em;
+        margin: .8em 0 0.8em;
     }
 }

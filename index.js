@@ -3,8 +3,11 @@
 **************************/
 const colorPicker = document.getElementById("color-picker")
 const colorSchemeSelect = document.getElementById("color-scheme-select")
+const colorSchemeSelectContainer = document.getElementById("color-scheme-container")
 const getColorSchemeBtn = document.getElementById("get-color-scheme-btn")
 const notificationCopyModal = document.getElementById('notification-copy-modal')
+const header = document.querySelector('header');
+let headerHeight 
 let colourCount = 6
 const colorAreaPercent = 100 / colourCount
 const colorSchemeModes = [
@@ -30,6 +33,15 @@ document.addEventListener('click', function(e){
         copyColorHexValueToClipboard(e.target.dataset.hex) 
     }
 })
+
+// Sets the collor scheme height depending on the window size
+function setColorSchemeHeight(){
+    headerHeight = header.offsetHeight
+    colorSchemeSelectContainer.style.height = `calc(100vh - ${headerHeight}px`
+}
+
+// Adds an event listener for the 'resize' event on the window object
+window.addEventListener('resize', setColorSchemeHeight)
 
 /**************************
     Functions
@@ -63,6 +75,7 @@ function renderColorScheme() {
             })
 
             document.getElementById('color-scheme-container').innerHTML = colorAreaHTML
+            setColorSchemeHeight()
         })
 }
 
